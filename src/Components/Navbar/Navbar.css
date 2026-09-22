@@ -1,0 +1,170 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    margin: 0;
+    padding: 20px 120px;
+    box-sizing: border-box;
+
+    z-index: 1000;
+    background: rgba(22, 21, 19, 0.95);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    list-style: none;
+    font-size: 20px;
+}
+
+.navbar > img:first-child {
+    width: 120px;
+    height: auto;
+}
+
+.nav-connect {
+    padding: 20px 40px;
+    border-radius: 50px;
+    background: linear-gradient(276deg, #DA7C25 0.36%, #B923E1 102.06%);
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.nav-connect:hover {
+    transform: scale(1.05);
+}
+
+.nav-menu li {
+    display: flex;
+    cursor: pointer;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.nav-menu li img {
+    display: flex;
+    margin: auto;
+}
+
+.anchor-link {
+    text-decoration: none;
+    color: white;
+}
+
+/*Animation */
+
+.navbar {
+    animation: navbarFade 0.8s ease-out;
+}
+
+.nav-menu li {
+    transition: transform 0.3s ease;
+}
+
+.nav-menu li:hover {
+    transform: translateY(-3px);
+}
+
+@keyframes navbarFade {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Desktop par mobile icons hidden */
+.nav-mob-open,
+.nav-mob-close {
+    display: none;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        margin: 20px 30px;
+    }
+
+    /* Connect button hide */
+    .nav-connect {
+        display: none;
+    }
+
+    /* Hamburger icon */
+    .nav-mob-open {
+        display: block;
+        position: fixed;
+        right: 30px;
+        top: 25px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        z-index: 999;
+    }
+
+    /* Sidebar */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        
+        width: 300px;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 30px;
+
+        padding: 100px 40px;
+
+        margin: 0;
+
+        background-color: #1f0016;
+
+        z-index: 1000;
+
+        transition: right 0.5s ease;
+    }
+
+    /* Sidebar open */
+    .nav-menu-visible {
+        right: 0;
+    }
+
+    /* Close icon */
+    .nav-mob-close {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .nav-menu li {
+        font-size: 30px;
+        padding-left: 100px;
+        flex-direction: row;
+        gap: 20px;
+    }
+}

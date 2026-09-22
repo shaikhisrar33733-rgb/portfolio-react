@@ -1,0 +1,451 @@
+
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+    margin: 100px 10%;
+}
+
+/* =========================
+   CONTACT TITLE
+========================= */
+
+.contact-title {
+    position: relative;
+}
+
+.contact-title h1 {
+    margin: 0;
+    padding: 0 30px;
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.contact-title img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 150px;
+    z-index: -1;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.contact-left {
+    width: 40%;
+}
+
+.contact-left h1 {
+    margin: 0 0 20px;
+    font-size: 55px;
+    font-weight: 600;
+
+    background: linear-gradient(
+        264deg,
+        #df8908 -5.09%,
+        #b415ff 106.28%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.contact-left p {
+    margin: 0 0 35px;
+    font-size: 23px;
+    line-height: 30px;
+    color: #d0d0d0;
+}
+
+/* ================= CONTACT ANIMATION ================= */
+
+/* Contact Title */
+.contact-title {
+    animation: contactTitle 0.8s ease-out;
+}
+
+@keyframes contactTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Contact Left */
+.contact-left {
+    animation: contactLeft 0.9s ease-out;
+}
+
+@keyframes contactLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Let's Talk */
+.contact-left h1 {
+    animation: talkTitle 0.8s ease-out 0.2s both;
+}
+
+@keyframes talkTitle {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Description */
+.contact-left > p {
+    animation: contactText 0.8s ease-out 0.3s both;
+}
+
+@keyframes contactText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Contact Details */
+.contact-detail {
+    opacity: 0;
+    animation: contactDetail 0.7s ease forwards;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.contact-detail:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.contact-detail:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.contact-detail:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes contactDetail {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Contact Detail Hover */
+.contact-detail:hover {
+    transform: translateX(8px);
+}
+
+
+/* Contact Icons */
+.contact-detail img {
+    transition: transform 0.3s ease;
+}
+
+.contact-detail:hover img {
+    transform: scale(1.15);
+}
+
+
+/* Contact Form */
+.contact-right {
+    animation: contactRight 0.9s ease-out;
+}
+
+@keyframes contactRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Labels */
+.contact-right label {
+    transition: transform 0.3s ease;
+}
+
+
+/* Inputs */
+.contact-right input,
+.contact-right textarea {
+    transition:
+        transform 0.3s ease,
+        border 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.contact-right input:focus,
+.contact-right textarea:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+
+/* Submit Button */
+.contact-submit {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.contact-submit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.contact-submit:active {
+    transform: scale(0.96);
+}
+
+/* =========================
+   CONTACT DETAILS
+========================= */
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-detail img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.contact-detail p {
+    margin: 0;
+    font-size: 23px;
+    color: #ffffff;
+}
+
+/* =========================
+   RIGHT SIDE / FORM
+========================= */
+
+.contact-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-right label {
+    margin-top: 8px;
+    font-size: 17px;
+    color: #ffffff;
+}
+
+.contact-right input,
+.contact-right textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 18px 20px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+
+    background: #32323c;
+    color: #ffffff;
+
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.contact-right input::placeholder,
+.contact-right textarea::placeholder {
+    color: #a5a5a5;
+}
+
+.contact-right input:focus,
+.contact-right textarea:focus {
+    border: 1px solid #b415ff;
+    box-shadow: 0 0 10px rgba(180, 21, 255, 0.2);
+}
+
+.contact-right textarea {
+    resize: vertical;
+    min-height: 180px;
+}
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.contact-submit {
+    width: fit-content;
+    margin-top: 20px;
+    padding: 16px 35px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        264deg,
+        #df8908 -5.09%,
+        #b415ff 106.28%
+    );
+
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(180, 21, 255, 0.3);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .contact {
+        margin: 70px 6%;
+        gap: 50px;
+    }
+
+    .contact-title h1 {
+        font-size: 45px;
+    }
+
+    .contact-section {
+        gap: 40px;
+    }
+
+    .contact-left {
+        width: 42%;
+    }
+
+    .contact-right {
+        width: 55%;
+    }
+
+    .contact-left h1 {
+        font-size: 42px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .contact {
+        margin: 60px 5%;
+        gap: 40px;
+    }
+
+    .contact-title h1 {
+        font-size: 35px;
+        padding: 0 15px;
+    }
+
+    .contact-title img {
+        width: 100px;
+    }
+
+    .contact-section {
+        flex-direction: column;
+        gap: 45px;
+    }
+
+    .contact-left {
+        width: 100%;
+    }
+
+    .contact-left h1 {
+        font-size: 38px;
+    }
+
+    .contact-left > p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .contact-right {
+        width: 100%;
+    }
+
+    .contact-right input,
+    .contact-right textarea {
+        padding: 15px;
+    }
+
+    .contact-submit {
+        width: 100%;
+        padding: 15px;
+    }
+}

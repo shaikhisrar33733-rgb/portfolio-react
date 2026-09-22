@@ -1,0 +1,301 @@
+
+/* =========================
+   MY WORK SECTION
+========================= */
+
+.mywork {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 80px 170px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.mywork-title {
+    position: relative;
+}
+
+.mywork-title h1 {
+    padding: 0 30px;
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.mywork-title img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+
+/* =========================
+   WORK CONTAINER
+========================= */
+
+.mywork-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+
+/* =========================
+   WORK IMAGE
+========================= */
+
+.mywork-container img { 
+    width: 600px; 
+    height: 450px; 
+    box-sizing: border-box;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.mywork-container img:hover {
+    transform: scale(1.05);
+    border: 4px solid #ff00ff;
+    border-radius: 10px;
+}
+
+
+/* =========================
+   SHOW MORE
+========================= */
+
+.mywork-showmore {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 80px;
+    gap: 15px;
+    padding: 30px 60px;
+    border-radius: 50px;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.mywork-showmore:hover {
+    gap: 30px;
+}
+
+
+/* ================= MY WORK ANIMATION ================= */
+
+/* Title Animation */
+.mywork-title {
+    animation: myworkTitle 0.8s ease-out;
+}
+
+@keyframes myworkTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Work Images */
+.mywork-container img {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+
+    animation: workImage 0.8s ease forwards;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* Images One-by-One */
+.mywork-container img:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.mywork-container img:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.mywork-container img:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.mywork-container img:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.mywork-container img:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.mywork-container img:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+
+/* Image Hover */
+.mywork-container img:hover {
+    transform: translateY(-10px) scale(1.03);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Image Animation */
+@keyframes workImage {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* Show More */
+.mywork-showmore {
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease;
+}
+
+.mywork-showmore:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Show More Arrow */
+.mywork-showmore img {
+    transition: transform 0.3s ease;
+}
+
+.mywork-showmore:hover img {
+    transform: translateX(8px);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+
+    .mywork {
+        margin: 70px 60px;
+        gap: 60px;
+    }
+
+    .mywork-title h1 {
+        font-size: 60px;
+    }
+
+    .mywork-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .mywork-container img {
+        width: 100%;
+        height: 250px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .mywork {
+        margin: 60px 30px;
+        gap: 50px;
+    }
+
+    .mywork-title h1 {
+        padding: 0 15px;
+        font-size: 50px;
+    }
+
+    .mywork-title img {
+        width: 100px;
+    }
+
+    .mywork-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        width: 100%;
+    }
+
+    .mywork-container img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+    }
+
+    .mywork-showmore {
+        font-size: 18px;
+        padding: 20px 40px;
+        margin-bottom: 40px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 425px) {
+
+    .mywork {
+        margin: 50px 20px;
+        gap: 40px;
+    }
+
+    .mywork-title h1 {
+        font-size: 38px;
+        padding: 0 10px;
+    }
+
+    .mywork-title img {
+        width: 75px;
+    }
+
+    .mywork-container {
+        gap: 20px;
+    }
+
+    .mywork-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .mywork-showmore {
+        font-size: 16px;
+        padding: 16px 30px;
+        gap: 10px;
+    }
+
+    .mywork-showmore:hover {
+        gap: 18px;
+    }
+}
